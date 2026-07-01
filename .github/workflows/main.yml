@@ -7,11 +7,15 @@ on:
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
 
-      - name: Display Test Message
-        run: echo "Automated test passed!"
+      - uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x test.sh
+
+      - name: Run test script
+        run: ./test.sh
